@@ -1,9 +1,9 @@
 import { Container, Typography, Paper } from '@mui/material';
-import FaithContent from './FaithContent';
+import TodoContent from "./TodoContent";
 
 
 
-function Faith() {
+function Todo() {
     return (
         <Container
             component="main" 
@@ -13,11 +13,11 @@ function Faith() {
                 sx={{ textAlign: 'center', mt:1}}
                 elevation={3}
             >
-                <Typography variant="h4" component="h1">生活信念</Typography>
+                <Typography variant="h4" component="h1">Todos</Typography>
             </Paper>
-            <FaithContent />
+            <TodoContent />
         </Container>
     );
 }
 
-export default Faith;
+export default Todo;

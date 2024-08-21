@@ -14,11 +14,13 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Faith', 'Crypto'];
+const pages = ['Faith', 'Relationship', 'Todo', 'Crypto'];
 const settings = ['Logout'];
 const page_links = {
   'Faith':'/faith',
-  'Crypto': '/crypto'
+  'Crypto': '/crypto',
+  'Relationship': "/relationship",
+  'Todo': "/todo"
 }
 
 function ResponsiveAppBar() {

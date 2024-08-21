@@ -3,14 +3,14 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Paper } from '@mui/material';
-import faithcontents from "../contents/faithContentsList";
+import relationshipcontents from '../contents/relationshipContentList';
 import ReactMarkdown from 'react-markdown';
 
-function FaithContent() {
+function RelationshipContent() {
     return (
         <Paper sx={{marginTop:3, marginBottom:3}}>
             {
-                faithcontents.map((content, index) => <Accordion>
+                relationshipcontents.map((content, index) => <Accordion>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         id={content.id}
@@ -27,4 +27,4 @@ function FaithContent() {
     );
 }
 
-export default FaithContent;
+export default RelationshipContent;
