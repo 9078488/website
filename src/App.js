@@ -1,9 +1,11 @@
-import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignUp from "./pages/SignUp";
+import CssBaseline from '@mui/material/CssBaseline';
+import LayOut from "./pages/Layout";
 import SignIn from "./pages/SignIn";
-import Private from "./pages/Private";
+import Faith from "./pages/Faith";
 import NotFound from "./pages/NotFound";
+import Crypto from "./pages/Crypto";
+
 
 function App() {
   return (
@@ -11,10 +13,12 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Private />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<LayOut />} >
+            <Route path="/faith" element={<Faith />} ></Route>
+            <Route path="/crypto" element={<Crypto />} ></Route>
+          </Route>
+          <Route path="/signin" element={<SignIn />} ></Route>
+          <Route path="*" element={<NotFound />} ></Route>
         </Routes>
       </BrowserRouter>
     </>

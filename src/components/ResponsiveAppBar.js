@@ -13,12 +13,15 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Logout'];
+const pages = ['Faith', 'Crypto'];
+const settings = ['Logout'];
+const page_links = {
+  'Faith':'/faith',
+  'Crypto': '/crypto'
+}
 
-function Private() {
+function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -38,16 +41,14 @@ function Private() {
     setAnchorElUser(null);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('access_token'); 
-    navigate('/signin');
-  };
+  const handleNavItemClick = (page) => {
+    navigate(page_links[page]);
+  }
 
-  useEffect(() => {
-    if (!localStorage.getItem('access_token')) {
-      navigate('/signin');
-    }
-  }, [navigate]);
+  const  handleLogOut = () => {
+    localStorage.removeItem('access_token');
+    navigate('/');
+  }
 
   return (
     <AppBar position="static">
@@ -103,7 +104,13 @@ function Private() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography 
+                    textAlign="center" 
+                    onClick={() => handleNavItemClick(page)}
+                    textTransform="none"
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -131,8 +138,8 @@ function Private() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick={() => handleNavItemClick(page)}
+                sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none'}}
               >
                 {page}
               </Button>
@@ -162,8 +169,8 @@ function Private() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={setting === 'Logout' ? handleLogout : handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center" onClick={setting === 'Logout' ? handleLogOut : null }>{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -173,4 +180,4 @@ function Private() {
     </AppBar>
   );
 }
-export default Private;
+export default ResponsiveAppBar;
