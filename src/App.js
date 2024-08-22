@@ -2,11 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CssBaseline from '@mui/material/CssBaseline';
 import LayOut from "./pages/Layout";
 import SignIn from "./pages/SignIn";
-import Faith from "./pages/Faith";
 import NotFound from "./pages/NotFound";
-import Crypto from "./pages/Crypto";
-import Todo from "./pages/Todo";
-import Relationship from "./pages/Relationship";
+import CryptoStategy from "./pages/CryptoStategy";
+import AccordionTemplate from "./components/AccordionTemplate";
+import faithcontents from "./contents/faithContentsList";
+import relationshipcontents from "./contents/relationshipContentList";
+import toDoContentList from "./contents/toDoContentList";
+
 
 
 function App() {
@@ -16,10 +18,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LayOut />} >
-            <Route path="/faith" element={<Faith />} ></Route>
-            <Route path="/crypto" element={<Crypto />} ></Route>
-            <Route path="/relationship" element={<Relationship />} ></Route>
-            <Route path="/todo" element={<Todo />} ></Route>
+            <Route path="/faith" element={<AccordionTemplate params={faithcontents} />} ></Route>
+            <Route path="/crypto-strategy" element={<CryptoStategy />} ></Route>
+            <Route path="/relationship" element={<AccordionTemplate params={relationshipcontents} />} ></Route>
+            <Route path="/todo" element={<AccordionTemplate params={toDoContentList} />} ></Route>
           </Route>
           <Route path="/signin" element={<SignIn />} ></Route>
           <Route path="*" element={<NotFound />} ></Route>

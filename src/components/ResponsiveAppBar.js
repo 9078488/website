@@ -14,11 +14,11 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Faith', 'Relationship', 'Todo', 'Crypto'];
+const pages = ['Faith', 'Relationship', 'Todo', 'Crypto Strategy'];
 const settings = ['Logout'];
 const page_links = {
   'Faith':'/faith',
-  'Crypto': '/crypto',
+  'Crypto Strategy': '/crypto-strategy',
   'Relationship': "/relationship",
   'Todo': "/todo"
 }

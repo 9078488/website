@@ -1,4 +1,6 @@
-const faithcontents = [
+const faithcontents = {
+    pageTitle: "生活信念",
+    pageContent: [
     {
         id: "1sasafhursdc",
         AccordionSummary: "人其实是个复杂的虫子",
@@ -43,8 +45,8 @@ const faithcontents = [
         - 提升
         - 思考真相，记录感悟
         - 扫除整理
-        `
+   `
     },
-];
+]}
 
 export default faithcontents;

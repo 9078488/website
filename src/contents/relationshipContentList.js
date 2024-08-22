@@ -1,4 +1,6 @@
-const relationshipcontents = [
+const relationshipcontents = {
+    pageTitle:"人际关系",
+    pageContent:[
     {
         id: "1sasafhurssdswdc",
         AccordionSummary: "人际关系的本质",
@@ -43,10 +45,9 @@ const relationshipcontents = [
     id: "3sasafhure2dsweessdddsdc",
     AccordionSummary: "人际感悟",
     AccordionDetails: `1.不超越责任去喂养任何人
- 
    `
     },
-];
+]}
 
 export default relationshipcontents;
 

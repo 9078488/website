@@ -1,4 +1,6 @@
-const toDoContentList = [
+const toDoContentList = {
+    pageTitle: "Todos",
+    pageContent:[
     {
     id: "1sasafhure2dswsdeeSssdddsdc",
     AccordionSummary: "人际",
@@ -71,15 +73,19 @@ const toDoContentList = [
    {
     id: "8gsasafhuref267rdsweessdddsdc",
     AccordionSummary: "托底",
-    AccordionDetails: `**游戏**
-    尽可能少
+    AccordionDetails: `**1.游戏**  
+    **2.短视频**  
+    **3.Youtube**  
+    **3.Twitter**  
+    **以上的尽可能少**
    `},
    {
     id: "9gsasasfhuref267rdsweessdddsdc",
     AccordionSummary: "其他杂事",
     AccordionDetails: `尽可能少
    `},
-]
+]}
+
 
 export default toDoContentList;
 
